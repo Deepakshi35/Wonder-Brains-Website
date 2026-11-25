@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration | Wonder Brains</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff0f6, #eeeaff, #eaf8ff);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 700;
+            color: #8e44ad;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 11px;
+            font-weight: 500;
+            color: #e45b91;
+        }
+
+        .home-btn {
+            text-decoration: none;
+            background: #8e44ad;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+        }
+
+        .register-section {
+            padding: 55px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .register-container {
+            width: 100%;
+            max-width: 650px;
+            background: white;
+            padding: 40px 45px;
+            border-radius: 22px;
+            box-shadow: 0 10px 35px rgba(70,50,120,0.12);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            color: #7540a1;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        form h3 {
+            font-size: 18px;
+            color: #e45b91;
+            margin-top: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f5dce9;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #444;
+            margin-top: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1.5px solid #ded6ed;
+            border-radius: 9px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            outline: none;
+            background: #fcfbff;
+        }
+
+        input {
+            height: 48px;
+        }
+
+        textarea {
+            min-height: 95px;
+            resize: vertical;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #9b59b6;
+            background: white;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        input[readonly] {
+            background: #f2eff8;
+            color: #777;
+        }
+
+        .submit-btn {
+            width: 100%;
+            height: 52px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #e45b91, #8e5bd9);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .register-container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            🌈 WONDER BRAINS ABACUS CLASSES
+            <span>Certified by Smart Kid Abacus</span>
+        </div>
+
+        <a href="index.html" class="home-btn">Home</a>
+    </nav>
+
+    <section class="register-section">
+
+        <div class="register-container">
+
+            <h1>Student Registration 🧠</h1>
+
+            <p class="subtitle">
+                Give your child the gift of a brighter mind!
+            </p>
+
+            <form action="https://script.google.com/macros/s/AKfycbw7QXzBPImN7OnyPNOjoiVzX8wfI2ZMsKGDeQDbdOYQZ9kbeI514pgyl7yUd9y2Dq2s/exec" method="POST"></form>">
+
+                <h3>Student Details</h3>
+
+                <label>Student's Full Name</label>
+                <input type="text" name="student_name"
+                    placeholder="Enter student's full name" required>
+
+                <label>Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label>Age</label>
+                <input type="text" id="age" name="age"
+                    placeholder="Age will be calculated automatically" readonly>
+
+                <label>School Name</label>
+                <input type="text" name="school"
+                    placeholder="Enter school name" required>
+
+                <label>Standard / Class</label>
+                <input type="text" name="standard"
+                    placeholder="Example: Class 2, Class 5" required>
+
+                <h3>Parent Details</h3>
+
+                <label>Father's Name</label>
+                <input type="text" name="mother_name"
+                    placeholder="Enter mother's full name" required>
+
+                <label>Mother's Name</label>
+                <input type="text" name="father_name"
+                    placeholder="Enter father's full name" required>
+
+                <label>Contact Phone Number</label>
+                <input type="tel" name="phone"
+                    placeholder="Enter 10-digit phone number"
+                    pattern="[6-9][0-9]{9}"
+                    maxlength="10" required>
+
+                <label>Residential Address</label>
+                <textarea name="address"
+                    placeholder="Enter your complete residential address"
+                    required></textarea>
+
+                <button type="submit" class="submit-btn">
+                    Submit Registration →
+                </button>
+
+            </form>
+
+            <p class="footer-text">
+                Wonder Brains Abacus Classes | Learn • Calculate • Excel
+            </p>
+
+        </div>
+
+    </section>
+
+    <script>
+        const dob = document.getElementById("dob");
+        const age = document.getElementById("age");
+
+        dob.max = new Date().toISOString().split("T")[0];
+
+        dob.addEventListener("change", function () {
+            if (!dob.value) {
+                age.value = "";
+                return;
+            }
+
+            const birthDate = new Date(dob.value + "T00:00:00");
+            const today = new Date();
+
+            if (birthDate > today) {
+                age.value = "";
+                dob.setCustomValidity("Date of birth cannot be in the future.");
+                dob.reportValidity();
+                return;
+            }
+
+            dob.setCustomValidity("");
+
+            let years = today.getFullYear() - birthDate.getFullYear();
+            const monthDifference = today.getMonth() - birthDate.getMonth();
+
+            if (
+                monthDifference < 0 ||
+                (monthDifference === 0 && today.getDate() < birthDate.getDate())
+            ) {
+                years--;
+            }
+
+            age.value = years + " years";
+        });
+    </script>
+
+</body>
+</html>
