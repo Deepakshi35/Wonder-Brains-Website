@@ -13,6 +13,78 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
+    <!-- Additional styling only for new learning program cards and landscape photos -->
+    <style>
+        .hero-image img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            object-position: center 28%;
+            border-radius: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center 28%;
+            border-radius: 16px;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 35px 0;
+        }
+
+        .program-card {
+            padding: 30px 22px;
+            border-radius: 22px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.13);
+        }
+
+        .program-card .program-icon {
+            font-size: 45px;
+            margin-bottom: 12px;
+        }
+
+        .program-card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .program-card p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .program-abacus {
+            background: linear-gradient(135deg, #fff0f5, #ffe0eb);
+        }
+
+        .program-spoken {
+            background: linear-gradient(135deg, #eeeaff, #ded6ff);
+        }
+
+        .program-phonics {
+            background: linear-gradient(135deg, #fff8df, #ffedb5);
+        }
+
+        @media (max-width: 768px) {
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -22,7 +94,7 @@
     <nav class="navbar">
 
         <div class="logo">
-            🌈 WONDER BRAINS
+            🌈 WONDER BRAINS ABACUS CLASSES
         </div>
 
         <div class="nav-text">
@@ -59,7 +131,8 @@
                 Every child has the power to shine!
 
                 At Wonder Brains, we make learning fun
-                through Abacus and Mental Mathematics.
+                through Abacus, Mental Mathematics,
+                Spoken English and Phonics.
 
                 Let's build brighter minds, stronger
                 memories and confident learners!
@@ -81,8 +154,8 @@
         <div class="hero-image">
 
             <img
-            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700"
-            alt="Children learning in a classroom">
+            src="images/group.jpg"
+            alt="Wonder Brains children celebrating their achievements with trophies">
 
             <div class="floating-card">
                 🧮 Learn • Practice • Shine!
@@ -175,36 +248,124 @@
     </section>
 
 
-    <!-- ABACUS LEARNING LEVELS -->
+    <!-- OUR LEARNING PROGRAMS -->
 
     <section class="levels">
 
         <div class="section-heading">
 
-            <span>OUR LEARNING PROGRAM</span>
+            <span>OUR LEARNING PROGRAMS</span>
 
-            <h2>8 Levels of Abacus Excellence</h2>
+            <h2>Learn, Grow & Shine with Wonder Brains!</h2>
 
             <p>
-                A structured learning journey from
-                basic concepts to advanced mental arithmetic.
+                A fun-filled learning experience designed
+                to develop intelligent, confident and
+                creative young learners.
             </p>
 
         </div>
 
 
-        <div class="level-grid">
+        <div class="program-grid">
 
-            <div class="level-card">LEVEL 01</div>
-            <div class="level-card">LEVEL 02</div>
-            <div class="level-card">LEVEL 03</div>
-            <div class="level-card">LEVEL 04</div>
-            <div class="level-card">LEVEL 05</div>
-            <div class="level-card">LEVEL 06</div>
-            <div class="level-card">LEVEL 07</div>
-            <div class="level-card">LEVEL 08</div>
+            <div class="program-card program-abacus">
+
+                <div class="program-icon">🧮</div>
+
+                <h3>8 Levels of Abacus</h3>
+
+                <p>
+                    Build a strong mathematical foundation!
+                    From basic abacus concepts to advanced
+                    mental arithmetic, children develop
+                    calculation speed, accuracy, concentration
+                    and visualisation skills through our
+                    structured 8-level learning journey.
+                </p>
+
+            </div>
+
+
+            <div class="program-card program-spoken">
+
+                <div class="program-icon">🗣️</div>
+
+                <h3>Spoken English</h3>
+
+                <p>
+                    Speak with confidence and express yourself
+                    beautifully! Through fun conversations,
+                    vocabulary building, storytelling and
+                    interactive speaking activities, children
+                    improve fluency, pronunciation and
+                    communication skills.
+                </p>
+
+            </div>
+
+
+            <div class="program-card program-phonics">
+
+                <div class="program-icon">🔤</div>
+
+                <h3>Phonics</h3>
+
+                <p>
+                    Make reading easy, exciting and fun!
+                    Children learn letter sounds, sound
+                    recognition, blending and word formation.
+                    Our playful phonics activities help build
+                    strong reading, pronunciation and
+                    spelling skills.
+                </p>
+
+            </div>
 
         </div>
+
+
+        <h2 class="section-title">ABACUS PERKS</h2>
+
+<div class="program-grid">
+
+    <div class="program-card program-abacus">
+        <div class="program-icon">🏆</div>
+        <h3>National & International Competitions</h3>
+        <p>Opportunities to participate in national and international competitions and showcase their abacus skills.</p>
+    </div>
+
+    <div class="program-card program-spoken">
+        <div class="program-icon">🧠</div>
+        <h3>Sharper Brain & Memory</h3>
+        <p>Supports brain development, improves memory and strengthens mental alertness.</p>
+    </div>
+
+    <div class="program-card program-phonics">
+        <div class="program-icon">🎯</div>
+        <h3>Better Concentration</h3>
+        <p>Improves focus, attention span and the ability to concentrate on tasks.</p>
+    </div>
+
+    <div class="program-card program-abacus">
+        <div class="program-icon">⚡</div>
+        <h3>Speed & Accuracy</h3>
+        <p>Helps children perform calculations faster and more accurately.</p>
+    </div>
+
+    <div class="program-card program-spoken">
+        <div class="program-icon">💡</div>
+        <h3>Logical Thinking</h3>
+        <p>Develops logical reasoning, problem-solving abilities and analytical thinking.</p>
+    </div>
+
+    <div class="program-card program-phonics">
+        <div class="program-icon">🌟</div>
+        <h3>Confidence Building</h3>
+        <p>Encourages self-confidence, independence and a positive attitude towards learning.</p>
+    </div>
+
+</div>
 
         <p class="level-note">
             From learning the basics to developing
@@ -230,16 +391,16 @@
         <div class="gallery-grid">
 
             <img
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600"
-            alt="Children studying">
+            src="images/1000143225.jpg"
+            alt="Wonder Brains children learning together">
 
             <img
-            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600"
-            alt="Classroom learning">
+            src="images/center.jpg"
+            alt="Children enjoying classroom activities">
 
             <img
-            src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600"
-            alt="Educational classroom">
+            src="images/1000143227.jpg"
+            alt="Young learners participating in educational activities">
 
         </div>
 
