@@ -201,6 +201,7 @@
     </nav>
 
     <section class="register-section">
+
         <div class="register-container">
 
             <h1>Student Registration 🧠</h1>
@@ -209,9 +210,11 @@
                 Give your child the gift of a brighter mind!
             </p>
 
-            <form id="registrationForm"
+            <form
+                id="registrationForm"
                 action="https://script.google.com/macros/s/AKfycbw7QXzBPImN7OnyPNOjoiVzX8wfI2ZMsKGDeQDbdOYQZ9kbeI514pgyl7yUd9y2Dq2s/exec"
-                method="POST">
+                method="POST"
+                target="hidden_iframe">
 
                 <h3>Student Details</h3>
 
@@ -224,7 +227,7 @@
 
                 <label>Age</label>
                 <input type="text" id="age" name="age"
-                    placeholder="Age will be calculated automatically" readonly>
+                    placeholder="Age will be calculated automatically" readonly required>
 
                 <label>School Name</label>
                 <input type="text" name="school"
@@ -266,15 +269,26 @@
             </p>
 
         </div>
+
     </section>
 
+    <!-- Hidden iframe receives the Google Apps Script response -->
+    <iframe
+        name="hidden_iframe"
+        id="hidden_iframe"
+        style="display:none;">
+    </iframe>
+
     <script>
+        // Automatically calculate student's age
+
         const dob = document.getElementById("dob");
         const age = document.getElementById("age");
 
         dob.max = new Date().toISOString().split("T")[0];
 
         dob.addEventListener("change", function () {
+
             if (!dob.value) {
                 age.value = "";
                 return;
@@ -285,19 +299,25 @@
 
             if (birthDate > today) {
                 age.value = "";
-                dob.setCustomValidity("Date of birth cannot be in the future.");
+                dob.setCustomValidity(
+                    "Date of birth cannot be in the future."
+                );
                 dob.reportValidity();
                 return;
             }
 
             dob.setCustomValidity("");
 
-            let years = today.getFullYear() - birthDate.getFullYear();
-            const monthDifference = today.getMonth() - birthDate.getMonth();
+            let years =
+                today.getFullYear() - birthDate.getFullYear();
+
+            const monthDifference =
+                today.getMonth() - birthDate.getMonth();
 
             if (
                 monthDifference < 0 ||
-                (monthDifference === 0 && today.getDate() < birthDate.getDate())
+                (monthDifference === 0 &&
+                 today.getDate() < birthDate.getDate())
             ) {
                 years--;
             }
@@ -305,34 +325,42 @@
             age.value = years + " years";
         });
 
-        // Submit registration in the background
-        const form = document.getElementById("registrationForm");
 
-        form.addEventListener("submit", async function (event) {
-            event.preventDefault();
+        // Submit form and redirect after iframe response
 
-            const button = form.querySelector('button[type="submit"]');
+        const form =
+            document.getElementById("registrationForm");
+
+        const iframe =
+            document.getElementById("hidden_iframe");
+
+        let formSubmitted = false;
+
+        form.addEventListener("submit", function () {
+
+            formSubmitted = true;
+
+            const button =
+                form.querySelector('button[type="submit"]');
 
             button.disabled = true;
             button.textContent = "Submitting...";
 
-            try {
-                await fetch(form.action, {
-                    method: "POST",
-                    mode: "no-cors",
-                    body: new URLSearchParams(new FormData(form))
-                });
+        });
+
+        iframe.addEventListener("load", function () {
+
+            if (formSubmitted) {
+
+                formSubmitted = false;
 
                 window.location.href =
                     "https://deepakshi35.github.io/Wonder-Brains-Website/thankyou.html";
 
-            } catch (error) {
-                button.disabled = false;
-                button.textContent = "Submit Registration →";
-
-                alert("Submission failed. Please try again.");
             }
+
         });
+
     </script>
 
 </body>
