@@ -183,7 +183,29 @@
         }
     </style>
 </head>
+<script>
+const form = document.getElementById("registrationForm");
 
+const frame = document.createElement("iframe");
+frame.name = "submission_frame";
+frame.style.display = "none";
+
+document.body.appendChild(frame);
+
+let submitted = false;
+
+frame.addEventListener("load", function () {
+    if (submitted) {
+        window.location.href = "thankyou.html";
+    }
+});
+
+form.target = "submission_frame";
+
+form.addEventListener("submit", function () {
+    submitted = true;
+});
+</script>
 <body>
 
     <nav class="navbar">
@@ -205,7 +227,9 @@
                 Give your child the gift of a brighter mind!
             </p>
 
-            <form action="https://script.google.com/macros/s/AKfycbw7QXzBPImN7OnyPNOjoiVzX8wfI2ZMsKGDeQDbdOYQZ9kbeI514pgyl7yUd9y2Dq2s/exec" method="POST">
+            <form id="registrationForm"
+action="https://script.google.com/macros/s/AKfycbw7QXzBPImN7OnyPNOjoiVzX8wfI2ZMsKGDeQDbdOYQZ9kbeI514pgyl7yUd9y2Dq2s/exec"
+method="POST">
                 <h3>Student Details</h3>
 
                 <label>Student's Full Name</label>
