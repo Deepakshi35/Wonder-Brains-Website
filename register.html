@@ -15,32 +15,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-<script>
-const form = document.getElementById("registrationForm");
 
-form.addEventListener("submit", async function(event) {
-    event.preventDefault();
-
-    const button = form.querySelector('button[type="submit"]');
-    button.disabled = true;
-    button.textContent = "Submitting...";
-
-    try {
-        await fetch(form.action, {
-            method: "POST",
-            mode: "no-cors",
-            body: new URLSearchParams(new FormData(form))
-        });
-
-        window.location.href = "https://deepakshi35.github.io/Wonder-Brains-Website/thankyou.html";
-
-    } catch (error) {
-        button.disabled = false;
-        button.textContent = "Submit Registration →";
-        alert("Submission failed. Please try again.");
-    }
-});
-</script>
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #fff0f6, #eeeaff, #eaf8ff);
@@ -182,6 +157,11 @@ form.addEventListener("submit", async function(event) {
             opacity: 0.9;
         }
 
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: wait;
+        }
+
         .footer-text {
             text-align: center;
             font-size: 12px;
@@ -221,7 +201,6 @@ form.addEventListener("submit", async function(event) {
     </nav>
 
     <section class="register-section">
-
         <div class="register-container">
 
             <h1>Student Registration 🧠</h1>
@@ -231,8 +210,9 @@ form.addEventListener("submit", async function(event) {
             </p>
 
             <form id="registrationForm"
-action="https://script.google.com/macros/s/AKfycbw7QXzBPImN7OnyPNOjoiVzX8wfI2ZMsKGDeQDbdOYQZ9kbeI514pgyl7yUd9y2Dq2s/exec"
-method="POST">
+                action="https://script.google.com/macros/s/AKfycbw7QXzBPImN7OnyPNOjoiVzX8wfI2ZMsKGDeQDbdOYQZ9kbeI514pgyl7yUd9y2Dq2s/exec"
+                method="POST">
+
                 <h3>Student Details</h3>
 
                 <label>Student's Full Name</label>
@@ -286,7 +266,6 @@ method="POST">
             </p>
 
         </div>
-
     </section>
 
     <script>
@@ -325,8 +304,36 @@ method="POST">
 
             age.value = years + " years";
         });
+
+        // Submit registration in the background
+        const form = document.getElementById("registrationForm");
+
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const button = form.querySelector('button[type="submit"]');
+
+            button.disabled = true;
+            button.textContent = "Submitting...";
+
+            try {
+                await fetch(form.action, {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: new URLSearchParams(new FormData(form))
+                });
+
+                window.location.href =
+                    "https://deepakshi35.github.io/Wonder-Brains-Website/thankyou.html";
+
+            } catch (error) {
+                button.disabled = false;
+                button.textContent = "Submit Registration →";
+
+                alert("Submission failed. Please try again.");
+            }
+        });
     </script>
 
 </body>
 </html>
-
